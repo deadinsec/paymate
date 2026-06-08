@@ -27,63 +27,86 @@
             <p class="text-[18px] text-[#08080880] mt-2">Enjoy easy and convenient financial  services with us. Cashout charge is low and simple to navigate </p>
         </div>
         <div class="cards min-h-[200px] grid grid-cols-3 gap-3 mt-5 p-3">
-            <div class="card border-2 border-gray-300 p-3">
+            <div id="addMoneyCard" class=" border-2 border-gray-300 p-3">
                 <img src="./assets/wallet1.png" alt="" class="h-[30px] w-[30px] mx-auto">
                 <p class="text-center mt-2 font-semibold text-[#08080880]">Add Money</p>
             </div>
-            <div class="card border-2 border-gray-300 p-3 rounded-xl">
+            <div id="cashOutCard" class=" border-2 border-gray-300 p-3 rounded-xl">
                 <img src="./assets/send1.png" alt="" class="h-[30px] w-[30px] mx-auto ">
                 <p class="text-center mt-2 font-semibold text-[#08080880]">Cash Out</p>
             </div>
-            <div class="card border-2 border-gray-300 p-3 rounded-xl">
+            <div id="transferCard" class=" border-2 border-gray-300 p-3 rounded-xl">
                 <img src="./assets/money1.png" alt="" class="h-[30px] w-[30px] mx-auto">
                 <p class="text-center mt-2 font-semibold text-[#08080880]">Transfer Money</p>
             </div>
-            <div class="card border-2 border-gray-300 p-3 rounded-xl">
+            <div id="GetBonusCard" class="card border-2 border-gray-300 p-3 rounded-xl">
                 <img src="./assets/bonus1.png" alt="" class="h-[30px] w-[30px] mx-auto ">
                 <p class="text-center mt-2 font-semibold text-[#08080880]">Get Bonus</p>
             </div>
-            <div class="card border-2 border-gray-300 p-3 rounded-xl">
+            <div id="payBilCard" class="card border-2 border-gray-300 p-3 rounded-xl">
                 <img src="./assets/purse1.png" alt="" class="h-[30px] w-[30px] mx-auto ">
                 <p class="text-center mt-2 font-semibold text-[#08080880]">Pay Bill</p>
             </div>
-            <div class="card border-2 border-gray-300 p-3 rounded-xl">
+            <div id="transactionsCard" class="card border-2 border-gray-300 p-3 rounded-xl">
                 <img src="./assets/transaction1.png" alt="" class="h-[30px] w-[30px] mx-auto ">
                 <p class="text-center mt-2 font-semibold text-[#08080880]">Transactions</p>
             </div>
         </div>
     </div>
     <div class="all-forms max-w-lg mx-auto p-3">
-        <h1 class="font-bold pt-2 pb-2">Add Money</h1>
-        <div class="addMoney  bg-white p-5 mx-2 rounded-xl">
-            <form action="" >
-                <label for="" class="font-semibold">Select A Bank</label>
-                <br>
-                <select id="bank" class="select input bg-[#f4f5f7] mt-2 w-full rounded-3xl outline-none">
-                    <option disabled selected>Select A Bank</option>
-                    <option>EBL Bank</option>
-                    <option>AB Bank</option>
-                    <option>Brac bank</option>
-                </select>
+        <div id="addMoney" style=" display: none;">
+            <h1 class="font-bold pt-2 pb-2">Add Money</h1>
+            <div class=" bg-white p-5 mx-2 rounded-xl">
+                <form action="" >
+                    <label for="" class="font-semibold">Select A Bank</label>
+                    <br>
+                    <select id="bank" class="select input bg-[#f4f5f7] mt-2 w-full rounded-3xl outline-none">
+                        <option disabled selected>Select A Bank</option>
+                        <option>EBL Bank</option>
+                        <option>AB Bank</option>
+                        <option>Brac bank</option>
+                    </select>
 
-                <label for="" class="font-semibold" >Bank Account Number</label>
-                <br>
-                <input id="accNum" type="text"  placeholder="Enter 11 digit account number " class="input bg-[#f4f5f7] mt-2 w-full rounded-3xl outline-none focus:outline" />
+                    <label for="" class="font-semibold" >Bank Account Number</label>
+                    <br>
+                    <input id="accNum" type="text"  placeholder="Enter 11 digit account number " class="input bg-[#f4f5f7] mt-2 w-full rounded-3xl outline-none focus:outline" />
 
-                <label for="" class="font-semibold">Amount to Add</label>
-                <br>
-                <input type="text" id="amount" placeholder="Add Amount to withdraw " class="input bg-[#f4f5f7] mt-2 w-full rounded-3xl outline-none focus:outline" />
+                    <label for="" class="font-semibold">Amount to Add</label>
+                    <br>
+                    <input type="text" id="amount" placeholder="Add Amount to withdraw " class="input bg-[#f4f5f7] mt-2 w-full rounded-3xl outline-none focus:outline" />
 
-                <label for="" class="font-semibold">Pin Number</label>
-                <br>
-                <input type="text" id="pinNum" placeholder="Enter 4 Digit Pin Number " class="input bg-[#f4f5f7] mt-2 w-full rounded-3xl outline-none focus:outline" />
-                <button id="addMnBtn" class="btn btn-primary mt-5 w-full rounded-3xl bg-[#0874F2]">Add Money</button>
-            </form>
+                    <label for="" class="font-semibold">Pin Number</label>
+                    <br>
+                    <input type="text" id="pinNum" placeholder="Enter 4 Digit Pin Number " class="input bg-[#f4f5f7] mt-2 w-full rounded-3xl outline-none focus:outline" />
+                    <button id="addMnBtn" class="btn btn-primary mt-5 w-full rounded-3xl bg-[#0874F2]">Add Money</button>
+                </form>
+            </div>
         </div>
-    </div>
+
+        <div id="cashOut" style=" display: none;">
+            <h1 class="font-bold pt-2 pb-2">Cash Out</h1>
+            <div class=" bg-white p-5 mx-2 rounded-xl">
+                <form action="" >
+                    <label for="" class="font-semibold" >Agent Number</label>
+                    <br>
+                    <input id="agentNum" type="text"  placeholder="Enter 11 digit number " class="input bg-[#f4f5f7] mt-3 w-full rounded-3xl outline-none focus:outline " />
+
+                    <label for="" class="font-semibold">Amount</label>
+                    <br>
+                    <input id="cashOutAmount" type="text"  placeholder="Enter Amount to withdraw " class="input bg-[#f4f5f7] mt-3 w-full rounded-3xl outline-none focus:outline" />
+
+                    <label for="" class="font-semibold">Pin Number</label>
+                    <br>
+                    <input id="cashOutpinNum"  type="text" placeholder="Enter 4 Digit Pin Number " class="input bg-[#f4f5f7] mt-3 w-full rounded-3xl outline-none focus:outline" />
+                    <button id="withdrawBtn" class="btn btn-primary mt-5 w-full rounded-3xl bg-[#0874F2]">Withdraw Money</button>
+                </form>
+            </div>
+        </div>
 
 
 
     <script src="./main.js"></script>
+    <script src="./cashOut.js"></script>
+    <script src="./allForm.js"></script>
 </body>
 </html>
