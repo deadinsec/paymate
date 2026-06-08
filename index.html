@@ -7,8 +7,31 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script><script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
-    <button class="btn btn-primary">Button</button>
-    
+<body class="bg-[#f4f5f7] h-[100vh] flex flex-col justify-center items-center " >
+    <div class="border-2 border-green-400 h-[130px] w-[300px] bg-[url(./assets/bg.png)] bg-cover flex justify-center items-center">
+        <img src="assets/Group.png" alt="">
+        
+    </div>
+    <form class=" bg-white rounded-xl w-[350px] p-8 ">
+        <div>
+            <label for="mobile">Mobile Number</label>
+            <br>
+            <input type="text" id="mobile" placeholder="Enter Your Number" class="input bg-[#f4f5f7] mt-2 w-full rounded-3xl" />
+            <p id="numPara" class="text-red-500 text-[12px] " style="display: none;">number should be 12345678910</p>
+        </div>
+        <div class="mt-5">
+            <label for="pin">4 Digit Pin</label>
+            <br>
+            <input type="text" id="pin" placeholder="Enter 4 Digit Pin " class="input bg-[#f4f5f7] mt-2 w-full rounded-3xl" />
+            <p id="pinPara" class="text-red-500 text-[12px]" style="display: none;" >pin should be 1234</p>
+        </div>
+        <button id="loginBtn" class="btn btn-primary mt-5 w-full rounded-3xl bg-[#0874F2]">Login</button>
+
+    </form>
+
+
+
+
+    <script src="./script.js"></script>
 </body>
 </html>
