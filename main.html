@@ -7,6 +7,15 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script><script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        .card-style{
+            background-color: #0874f20d;
+            border-color: #0874F2;
+            color: #0874F2;
+        }
+    </style>
+
 </head>
 <body class="bg-[#f4f5f7] h-[100%]  w">
     <div class= "max-w-lg mx-auto bg-white rounded-b-xl">
@@ -19,7 +28,7 @@
             </div>
         </div>
         <div>  
-            <button class="btn text-[#08080880] mr-5"><i class="fa-solid fa-arrow-right-from-bracket rotate-180"></i> Log Out </button>
+            <button id="logOutBtn" class="btn text-[#08080880] mr-5"><i class="fa-solid fa-arrow-right-from-bracket rotate-180"></i> Log Out </button>
         </div>
         </nav>
         <div class="welText p-3 mt-8">
@@ -27,15 +36,15 @@
             <p class="text-[18px] text-[#08080880] mt-2">Enjoy easy and convenient financial  services with us. Cashout charge is low and simple to navigate </p>
         </div>
         <div class="cards min-h-[200px] grid grid-cols-3 gap-3 mt-5 p-3">
-            <div id="addMoneyCard" class=" border-2 border-gray-300 p-3 rounded-xl">
+            <div id="addMoneyCard" class="card border-2 border-gray-300 p-3 rounded-xl">
                 <img src="./assets/wallet1.png" alt="" class="h-[30px] w-[30px] mx-auto">
                 <p class="text-center mt-2 font-semibold text-[#08080880]">Add Money</p>
             </div>
-            <div id="cashOutCard" class=" border-2 border-gray-300 p-3 rounded-xl">
+            <div id="cashOutCard" class="card border-2 border-gray-300 p-3 rounded-xl">
                 <img src="./assets/send1.png" alt="" class="h-[30px] w-[30px] mx-auto ">
                 <p class="text-center mt-2 font-semibold text-[#08080880]">Cash Out</p>
             </div>
-            <div id="transferCard" class=" border-2 border-gray-300 p-3 rounded-xl">
+            <div id="transferCard" class="card border-2 border-gray-300 p-3 rounded-xl">
                 <img src="./assets/money1.png" alt="" class="h-[30px] w-[30px] mx-auto">
                 <p class="text-center mt-2 font-semibold text-[#08080880]">Transfer Money</p>
             </div>
@@ -54,7 +63,7 @@
         </div>
     </div>
     <div class="all-forms max-w-lg mx-auto p-3">
-        <div id="addMoney" style=" display: none;">
+        <div id="addMoney" style=" display: none;"">
             <h1 class="font-bold pt-2 pb-2">Add Money</h1>
             <div class=" bg-white p-5 mx-2 rounded-xl">
                 <form action="" >
@@ -102,6 +111,7 @@
                 </form>
             </div>
         </div>
+
         <div id="transferMoney" style="display: none;">
             <h1 class="font-bold pt-2 pb-2">Transfer Money</h1>
             <div class=" bg-white p-5 mx-2 rounded-xl">
@@ -128,7 +138,7 @@
                 <form action="" >
                     <label for="" class="font-semibold" >Enter Your Bonus Coupon</label>
                     <br>
-                    <input id="userAccNum" type="text"  placeholder="Enter Your Coupon " class="input bg-[#f4f5f7] mt-3 w-full rounded-3xl outline-none focus:outline " />
+                    <input id="couponId" type="text"  placeholder="Enter Your Coupon " class="input bg-[#f4f5f7] mt-3 w-full rounded-3xl outline-none focus:outline " />
                     <button id="bonusBtn" class="btn btn-primary mt-5 w-full rounded-3xl bg-[#0874F2]">Get Bonus</button>
                 </form>
             </div>
@@ -158,13 +168,13 @@
 
                     <label for="" class="font-semibold">Pin Number</label>
                     <br>
-                    <input type="text" id="pinNum" placeholder="Enter 4 Digit Pin Number " class="input bg-[#f4f5f7] mt-2 w-full rounded-3xl outline-none focus:outline" />
-                    <button id="addMnBtn" class="btn btn-primary mt-5 w-full rounded-3xl bg-[#0874F2]">Pay Now</button>
+                    <input type="text" id="billPinNum" placeholder="Enter 4 Digit Pin Number " class="input bg-[#f4f5f7] mt-2 w-full rounded-3xl outline-none focus:outline" />
+                    <button id="payBillBtn" class="btn btn-primary mt-5 w-full rounded-3xl bg-[#0874F2]">Pay Now</button>
                 </form>
             </div>
         </div>
 
-         <div id="transcationHis" style="display: none;">
+        <div id="transcationHis" style="display: none;">
             <h1 class="font-bold pt-2 pb-2">Transaction History</h1>
             <div class=" bg-white p-5 mx-2 rounded-xl flex justify-between items-center mb-3">
                 <div class="flex items-center">
@@ -207,10 +217,9 @@
                 <i class="fa-solid fa-ellipsis-vertical"></i>
             </div>
         </div>
-
+    </div>
 
     <script src="./main.js"></script>
-    <script src="./cashOut.js"></script>
-    <script src="./allForm.js"></script>
+    
 </body>
 </html>
