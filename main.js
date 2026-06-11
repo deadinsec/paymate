@@ -246,16 +246,16 @@ document.getElementById('transactionsCard').addEventListener('click', function()
     togForm('transcationHis')
     togCardStyle('transactionsCard')
     // console.log(tranHisData)
-    document.getElementById('toPutInParent').innerText =" "
-    for(let data of tranHisData){
+    document.getElementById('toPutInParent').innerText =" "  
+    for(let i=tranHisData.length-1; i>=0; i--){
         let toPutInChild = document.createElement('div')
         toPutInChild.innerHTML=`
             <div id="parentHistory" class=" bg-white p-5 mx-2 rounded-xl flex justify-between items-center mb-3">
                 <div class="flex items-center">
                     <img src="./assets/wallet1.png" alt=" " class="h-[25px]">
                     <div id="history" class="ml-3">
-                        <h1 class="font-bold">${data.name}: $${data.money}</h1>
-                        <p class="text-[12px]">${data.time}</p>
+                        <h1 class="font-bold">${tranHisData[i].name}: $${tranHisData[i].money}</h1>
+                        <p class="text-[12px]">${tranHisData[i].time}</p>
                     </div>
                 </div>
                 <i class="fa-solid fa-ellipsis-vertical"></i>
@@ -263,6 +263,8 @@ document.getElementById('transactionsCard').addEventListener('click', function()
         `
         document.getElementById('toPutInParent').appendChild(toPutInChild)
     }
+
+
 })
 
 
