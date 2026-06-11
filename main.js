@@ -5,8 +5,7 @@ function idValue(idName){
     return value1;
 }
 
-
-
+let tranHisData =[]
 
 // Add money features
 
@@ -24,6 +23,9 @@ document.getElementById('addMnBtn').addEventListener('click', function(e){
         alert('please chose bank')
         return;
     }
+    if(mnyAmount<=0){
+        alert('Invalid Amount')
+    }
     if(bankNum.length != 11){
         alert('account number is invalid, put 11 digit number')
         return;
@@ -34,8 +36,15 @@ document.getElementById('addMnBtn').addEventListener('click', function(e){
     }
     document.getElementById('curMny').innerText = total
     document.getElementById('amount').value = 0
-    // let current = document.getElementById('curMny').innerText
-    // console.log(total)
+
+    const data = {
+        name : 'Added Money',
+        money: mnyAmount,
+        time : new Date().toLocaleTimeString()
+
+    }
+    tranHisData.push(data)
+    console.log(tranHisData)
 })
 
 
@@ -51,6 +60,9 @@ document.getElementById('withdrawBtn').addEventListener('click', function(e){
         alert('Agent number is invalid, put 11 digit number')
         return;
     }
+    if(cashOut<=0){
+        alert('Invalid Amount')
+    }
     if(pass !== 1234){
         alert('Your pin is invalid. your pin is 1234')
         return;
@@ -62,6 +74,14 @@ document.getElementById('withdrawBtn').addEventListener('click', function(e){
     let total = parseInt(document.getElementById('curMny').innerText) - cashOut
     document.getElementById('curMny').innerText = total
     document.getElementById('cashOutAmount').value = 0
+
+    const data = {
+        name : 'Cashed out Money',
+        money: cashOut,
+        time : new Date().toLocaleTimeString()
+    }
+    tranHisData.push(data)
+    console.log(tranHisData)
 })
 
 
@@ -77,6 +97,9 @@ document.getElementById('sendBtn').addEventListener('click', function(e){
         alert('User Account number is invalid, put 11 digit number')
         return;
     }
+    if(transferAmount<=0){
+        alert('Invalid Amount')
+    }
     if(pass !== 1234){
         alert('Your pin is invalid. your pin is 1234')
         return;
@@ -88,6 +111,13 @@ document.getElementById('sendBtn').addEventListener('click', function(e){
     let total = parseInt(document.getElementById('curMny').innerText) - transferAmount
     document.getElementById('curMny').innerText = total
     document.getElementById('cashOutAmount').value = 0
+    const data = {
+        name : 'Transferred Money',
+        money : transferAmount,
+        time : new Date().toLocaleTimeString()
+    }
+    tranHisData.push(data)
+    console.log(tranHisData)
 })
 
 
@@ -105,6 +135,12 @@ document.getElementById('bonusBtn').addEventListener('click', function(e){
     let total = parseInt(document.getElementById('curMny').innerText) + transferAmount
     document.getElementById('curMny').innerText = total
     document.getElementById('couponId').value = ""
+    const data = {
+        name : 'Added Bonus Money',
+        money : transferAmount,
+        time : new Date().toLocaleTimeString()
+    }
+    tranHisData.push(data)
 })
 
 
@@ -128,6 +164,9 @@ document.getElementById('payBillBtn').addEventListener('click', function(e){
         alert('Biller account number is invalid, put 11 digit number')
         return;
     }
+    if(mnyAmount<=0){
+        alert('Invalid Amount')
+    }
      if(mnyAmount>currentMny){
         alert('Insufficient balance!')
         return;
@@ -139,8 +178,15 @@ document.getElementById('payBillBtn').addEventListener('click', function(e){
     let total = parseInt(document.getElementById('curMny').innerText) - mnyAmount
     document.getElementById('curMny').innerText = total
     document.getElementById('billAmount').value = 0
+    const data = {
+        name : 'Bill Payed',
+        money : mnyAmount,
+        time : new Date().toLocaleTimeString()
+    }
+    tranHisData.push(data)
  
 })
+
 
 
 // ALL Form Toggle System
@@ -199,6 +245,24 @@ document.getElementById('payBilCard').addEventListener('click', function(){
 document.getElementById('transactionsCard').addEventListener('click', function(){
     togForm('transcationHis')
     togCardStyle('transactionsCard')
+    // console.log(tranHisData)
+    document.getElementById('toPutInParent').innerText =" "
+    for(let data of tranHisData){
+        let toPutInChild = document.createElement('div')
+        toPutInChild.innerHTML=`
+            <div id="parentHistory" class=" bg-white p-5 mx-2 rounded-xl flex justify-between items-center mb-3">
+                <div class="flex items-center">
+                    <img src="./assets/wallet1.png" alt=" " class="h-[25px]">
+                    <div id="history" class="ml-3">
+                        <h1 class="font-bold">${data.name}: $${data.money}</h1>
+                        <p class="text-[12px]">${data.time}</p>
+                    </div>
+                </div>
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+        `
+        document.getElementById('toPutInParent').appendChild(toPutInChild)
+    }
 })
 
 
